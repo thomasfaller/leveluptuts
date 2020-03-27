@@ -77,13 +77,19 @@
 //  4.  Naming Things
 //  **************************************
 
-// Consistancy is king
+//  Consistancy is king
+//  clearInterval, Searchable & obvious
+//  Use Var names that make sense
+
+const BASE_SALARY = 16000;
+const SALARY_MULTIPLIER = 4;
 
 const makePerson = ({ firstName, lastName, age, job }) => {
   return {
     name: firstName + " " + lastName,
     age,
-    job
+    job,
+    salary: BASE_SALARY * SALARY_MULTIPLIER
   };
 };
 
@@ -113,3 +119,5 @@ const hireDev = ({ dev }) => {
 };
 
 console.log(hireDev({ dev }));
+
+//  5.  Immutables & Pure functions
