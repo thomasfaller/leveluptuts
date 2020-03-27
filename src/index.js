@@ -81,24 +81,24 @@
 //  clearInterval, Searchable & obvious
 //  Use Var names that make sense
 
-const BASE_SALARY = 16000;
-const SALARY_MULTIPLIER = 4;
+// const BASE_SALARY = 16000;
+// const SALARY_MULTIPLIER = 4;
 
-const makePerson = ({ firstName, lastName, age, job }) => {
-  return {
-    name: firstName + " " + lastName,
-    age,
-    job,
-    salary: BASE_SALARY * SALARY_MULTIPLIER
-  };
-};
+// const makePerson = ({ firstName, lastName, age, job }) => {
+//   return {
+//     name: firstName + " " + lastName,
+//     age,
+//     job,
+//     salary: BASE_SALARY * SALARY_MULTIPLIER
+//   };
+// };
 
-const dev = makePerson({
-  firstName: "Thomas",
-  lastName: "Faller",
-  age: 39,
-  job: "Web Dev"
-});
+// const dev = makePerson({
+//   firstName: "Thomas",
+//   lastName: "Faller",
+//   age: 39,
+//   job: "Web Dev"
+// });
 
 // DO NOT DO!!!
 // const hireDev = ({ devInfo }) => {
@@ -110,14 +110,57 @@ const dev = makePerson({
 // };
 
 // Correct
-const hireDev = ({ dev }) => {
-  const hiredDevInfo = {
-    hired: true,
-    ...dev
-  };
-  return hiredDevInfo;
-};
+// const hireDev = ({ dev }) => {
+//   const hiredDevInfo = {
+//     hired: true,
+//     ...dev
+//   };
+//   return hiredDevInfo;
+// };
 
-console.log(hireDev({ dev }));
+// console.log(hireDev({ dev }));
 
 //  5.  Immutables & Pure functions
+
+//  Immutable vs. Mutable
+//  can't be changed / can be changed
+//  Code should be immutable as much as possible
+
+//  Pure Functions
+//  Always return the same output from the same input
+
+// const name = "Thomas";
+// const fullName = name + " Faller";
+
+// const addTwo = x => x + 2;
+// // This will always return the same result
+
+// let multi = 3;
+// const addThree = x => x + multi;
+// This will not always do the same
+
+//  6.  Benefits of smaller functions
+
+// const cart = ["10", "5", "15"];
+
+// const SHIPPING_COSTS = 10;
+
+// const fakeAPICharge = total => true;
+// const fakeSendRecipt = total => true;
+
+// const getSubTotal = cart => cart.reduce((tempTotal, item) => tempTotal + item);
+// const getTotal = subTotal => subTotal + SHIPPING_COSTS;
+// const sendReceipt = ({ email, total }) => fakeSendRecipt({ email, total });
+
+// const checkout = cart => {
+//   const subTotal = getSubTotal(cart);
+//   const total = getTotal(subTotal);
+//   const orderSuccess = fakeAPICharge(total);
+//   if (orderSuccess) {
+//     sendReceipt({
+//       email: "fakeemail@gmail.com",
+//       total
+//     });
+//   }
+//   return orderSuccess;
+// };
